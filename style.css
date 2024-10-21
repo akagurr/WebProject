@@ -1,19 +1,66 @@
 body{
-    background-image: url(forest-8355748_1280.webp);
+    background-image: url(dark-background-abstract-background-network-3d-background-3840x2160-8324.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
+
   .main{
     display: flex;
     justify-content: center;
+    align-items: center;
   }
-  .login{
-  visibility: hidden;
-  border: solid thin white;
-  opacity: 1.7;
+
+  .loginBox{
+  border: solid thin rgb(255, 255, 255,0.5);
   color: white;
   margin: 250px;
+  padding: 30px;
   height: 300px;
-  width: 20%;
-  color: #000;
+  width: 400px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
   }
+
+  .login{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login input{
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+  }
+
+  .login button{
+    border: thin solid transparent;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    padding: 12px 20px;
+  }
+
+  .login button:hover{
+    border: #fff;
+    background:  rgb(255, 255, 255,0.15);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .login a{
+    color: #efefef;
+    text-decoration: none;
+
+  }
+
+  .login a:hover{
+    text-decoration: underline;
+  }
+
+
