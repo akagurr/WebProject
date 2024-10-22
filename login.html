@@ -3,26 +3,36 @@
   <head>
     <link rel="stylesheet" href="./style.css" />
     <script defer src="./script.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta charset="utf-8" />
-    <title>ToDo</title>
+    <title>Login</title>
   </head>
 
   <body>
    
     <div class="main">
 
-      <div class="loginBox">
+      <div class="Box">
 
-        <div class="login">
+        <div class="InsideBox">
 
-          <H1>Login</H1>
-        <input type="email" id="em" name="email" placeholder="Enter your email" required>
+          <H1>Login</H1>  <p></p>
+        
+          <div class="usrBox">
+            <input type="text" id="usr" name="usr" placeholder="Username" required >
+            <i class='bx bxs-user'></i>
+
+          </div>
+         <div class="pasBox">
+          <input type="password" id="pass" name="password" placeholder="Password" required>
+          <i class='bx bxs-lock-alt' ></i>
+         </div>
         <p></p>
-        <input type="password" id="pass" name="password" placeholder="Enter your password" required>
+       
         <p></p>
         <button id="log">Login</button>
         <p></p>
-        <a href="reg">Don`t have an account?</a>
+        <a href="register.html">Don`t have an account?</a>
 
         </div>
         
