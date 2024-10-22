@@ -74,6 +74,15 @@ body{
     transition: transform 0.3s ease, border-color 0.3s ease; 
   }
 
+  
+  .InsideBox .usrBox:hover,
+  .InsideBox .usrBox:focus ,
+  .InsideBox .pasBox:hover,
+  .InsideBox .pasBox:focus {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease, border-color 0.3s ease; 
+  }
+
   .InsideBox button:hover{
     border: #fff;
     background:  rgb(255, 255, 255,0.15);
