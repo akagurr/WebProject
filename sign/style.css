@@ -26,7 +26,7 @@ body {
   text-align: center;
 }
 
-.InsideBox {
+.InsideBox,.Reg {
   display: flex;
   flex-direction: column;
 }
@@ -51,13 +51,13 @@ body {
   border: none;
   outline: none;
   background: transparent;
-  width: 70%;
+  width: 90%;
   border-bottom: 2px solid #ccc;
   margin: 15px;
 }
 
 
-.InsideBox button {
+.InsideBox button,.InsideBox .Reg button {
   border: thin solid transparent;
   background: #fff;
   color: #000;

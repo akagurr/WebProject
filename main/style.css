@@ -1,0 +1,22 @@
+body{
+background-image: url(dark-background-abstract-background-network-3d-background-3840x2160-8324.png);
+    background: rgb(16, 16, 16);
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-family: sans-serif;   
+}
+
+
+.sidebar{
+    border: solid thin rgb(93, 90, 90);
+    border-radius: 2px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background: rgb(67, 66, 66);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+}
