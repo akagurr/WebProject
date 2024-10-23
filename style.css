@@ -1,19 +1,93 @@
-body{
-    background-image: url(forest-8355748_1280.webp);
-    background-repeat: no-repeat;
-    background-size: 100%;
-  }
-  .main{
-    display: flex;
-    justify-content: center;
-  }
-  .login{
-  visibility: hidden;
-  border: solid thin white;
-  opacity: 1.7;
+body {
+  background-image: url(dark-background-abstract-background-network-3d-background-3840x2160-8324.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Box {
+  border: solid thin rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
   color: white;
   margin: 250px;
-  height: 300px;
-  width: 20%;
+  padding: 30px;
+  width: 400px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  text-align: center;
+}
+
+.InsideBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.InsideBox input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 70%;
+}
+
+.usrBox, .pasBox{
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 2px solid #ccc;
+  margin: 30px;
+}
+
+
+.InsideBox .Reg input{
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 70%;
+  border-bottom: 2px solid #ccc;
+  margin: 15px;
+}
+
+
+.InsideBox button {
+  border: thin solid transparent;
+  background: #fff;
   color: #000;
-  }
+  font-weight: 600;
+  padding: 12px 20px;
+}
+
+.InsideBox input:hover, .InsideBox input:focus {
+  transform: scale(1.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.usrBox:hover, .usrBox:focus, .pasBox:hover, .pasBox:focus {
+  transform: scale(1.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.InsideBox button:hover {
+  border: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.InsideBox a {
+  color: #efefef;
+  text-decoration: none;
+}
+
+.InsideBox a:hover {
+  text-decoration: underline;
+}
