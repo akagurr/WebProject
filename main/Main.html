@@ -8,12 +8,114 @@
   </head>
 
   <body>
-    <div class="main">
-        
-        <div class="sidebar">
-            
-        </div>
+        <nav class="sidebar close">
+            <header>
+                <div class="sideTop">
+                    <span class="image">
+                        <img src="qw.png" alt="">
+                    </span>
 
-    </div>
+                    <div class="usr">
+                        <span class="name">User</span>
+                    </div>
+                   
+                 </div>  
+               
+                 <i class='bx bxs-chevron-right tog' id="toggleIcon"></i>
+                
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">
+                    <li class="searchBox">
+                        <i class='bx bx-search-alt icon' ></i>
+                        <input type="search" placeholder="Search...">
+                      </li>
+
+                    <ul class="menu-link">
+                        <li class="nav-link">
+                          <a href="#">
+                            <i class='bx bx-plus icon'></i>
+                            <span class="line_name">Add task</span>
+                          </a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-calendar-check icon' ></i>
+                              <span class="line_name">Today Tasks</span>
+                            </a>
+                          </li>
+                          <li class="nav-link">
+                            <a href="#">
+                              <i class='bx bxs-time icon'></i>
+                              <span class="line_name">Quarter of urgency </span>
+                            </a>
+                          </li>
+                          
+                    </ul>
+                </div>
+                <div class="bottom"><li class="nav-link">
+                    <a href="#">
+                        <i class='bx bxs-door-open icon' ></i>
+                      <span class="line_name">Logout</span>
+                    </a>
+                  </li></div>
+            </div>
+        </nav>
+           
+                </div>
+            </div>
+
+        </nav>
+
+        <section class="Today">
+            <div class="main">
+                <h1>IMPORTANT</h1>
+
+                <div class="page_cont">
+                    <div class="sechead">
+                        <h2>Urgent</h2>
+                        <input type="button" name="delete" id="delete" value="Delete Selected">
+                    </div>
+                <div class="lst">
+                    
+                    <p>study</p>
+                    <input type="button" name="done" id="lstcheckbox" value="edit">
+                </div>
+                <div class="lst">
+                    <p>study</p>
+                    <input type="button" name="done" id="lstcheckbox" value="edit">
+                </div>
+                <div class="lst">
+                    <p>study</p>
+                    <input type="button" name="done" id="lstcheckbox" value="edit">
+                </div>
+                </div>
+                <div class="page_cont">
+                    <div class="sechead">
+                        <h2>noy Urgent</h2>
+                        <input type="button" name="delete" id="delete" value="Delete Selected">
+                    </div>
+                <div class="lst">
+                    <p>study</p>
+                    <input type="button" name="done" id="lstcheckbox" value="edit">
+                </div>
+                <div class="lst">
+                    <p>study</p>
+                    <input type="button" name="done" id="lstcheckbox" value="edit">
+                </div>
+                <div class="lst">
+                    <p>study</p>
+                    <input type="button" name="done" id="lstcheckbox" value="edit">
+                </div>
+                </div>
+        
+            </div>
+            </div>
+            
+
+        </section>
+
+    <script src="sidebar.js"></script>
   </body>
 </html>
