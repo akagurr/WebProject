@@ -166,14 +166,14 @@ transition: 0.2s;
     justify-content: space-between;
 }
 
-.Today{
+.Today,.quartersOfUrgency{
     height: 100vh;
     width: calc(100%-290px);
     position: relative;
     left: 290px;
     transition: 0.2s ;
 }
-.sidebar.close ~ .Today{
+.sidebar.close ~ .Today,.quartersOfUrgency{
     left: 88px;
     width: calc(100%-88px);
 }
@@ -267,4 +267,9 @@ transition: 0.2s;
     scale: 1.1;
     color:rgb(214, 55, 16) ;
     text-decoration: none;
+}
+
+
+#urgencySection {
+    display: none; /* Initially hide the section */
 }
