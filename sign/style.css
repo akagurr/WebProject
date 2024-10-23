@@ -36,6 +36,7 @@ body {
   outline: none;
   background: transparent;
   width: 70%;
+  color: #ccc;
 }
 
 .usrBox, .pasBox{
@@ -57,17 +58,11 @@ body {
 }
 
 
-.InsideBox button,.InsideBox .Reg button {
-  border: thin solid transparent;
-  background: #fff;
-  color: #000;
-  font-weight: 600;
-  padding: 12px 20px;
-}
-
-.InsideBox input:hover, .InsideBox input:focus {
-  transform: scale(1.1);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+.InsideBox input[type="submit"]:hover, .InsideBox .Reg input[type="submit"]:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .usrBox:hover, .usrBox:focus, .pasBox:hover, .pasBox:focus {
@@ -75,12 +70,14 @@ body {
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.InsideBox button:hover {
-  border: #fff;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+.InsideBox input[type="submit"], .InsideBox .Reg input[type="submit"] {
+  border: thin solid transparent;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 20px;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .InsideBox a {
