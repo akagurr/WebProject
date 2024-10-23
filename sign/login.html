@@ -13,6 +13,7 @@
       <div class="Box">
         <div class="InsideBox">
           <h1>Login</h1> 
+          <form id="registerForm" action="/login" method="POST">
           <div class="usrBox">
             <input type="text" id="usr" name="usr" placeholder="Username" required />
             <i class='bx bxs-user'></i>
@@ -21,11 +22,13 @@
             <input type="password" id="pass" name="password" placeholder="Password" required />
             <i class='bx bxs-lock-alt'></i>
           </div>
-          <input type="submit" value="Login">
+          <input type = "submit" id="log" value = "Login"/>
+          </form>
           <p></p>
           <a href="register.html">Don't have an account?</a>
         </div>
       </div>
     </div>
   </body>
+  <script src="auth.js"></script>
 </html>
