@@ -8,7 +8,7 @@ color: white;
 
 body{
 
-    background: rgb(16, 16, 16);
+    background-image: url(dark-background-abstract-background-network-3d-background-3840x2160-8324.png);
         width: 100%;
         font-family: sans-serif;   
 }
@@ -183,24 +183,33 @@ transition: 0.2s;
 
 /*Section class=home*/
 
+.main {
 
+align-items: flex-start;
+text-align: left;
+
+}
 .lst input{
     align-items: right;
 }
 .main h1{
     margin: 30px;
     margin-left: 180px;
+    text-shadow: 2px 2px black;
+    color: #ccc;
 }
 
 .main h2{
     margin-top: 40px;
+    text-shadow: 3px 3px black;
+    color: #ccc;
     
 }
 .page_cont{
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: auto;
+    width: 70%;
+    margin-left: 5%;
     
 }
 
@@ -220,14 +229,14 @@ transition: 0.2s;
     text-decoration: underline;
 }
 .sechead input:hover{
-    scale: 1.1;
+    scale: 1.05;
     color:rgb(214, 55, 16) ;
     text-decoration: none;
 }
 .lst{
     display: flex;
     justify-content:space-between;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 70px;
     width: 100%;
     border-top:0px;
@@ -243,16 +252,17 @@ transition: 0.2s;
 }
 
 .lst:hover{
-    background-color: #1d1c1c;
+    background-color: rgba(0, 0, 0, 0.5);
     border: 0.5 solid thin ;
     border-radius: 5px;
-    border-bottom-color: #1d1c1c;
+    border-bottom-color: #1d1c1c ;
     
 }
 .lst p:hover{
     
     color: rgb(214, 55, 16);
-    transform: scale(1.1);
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .lst input{
@@ -268,3 +278,67 @@ transition: 0.2s;
     color:rgb(214, 55, 16) ;
     text-decoration: none;
 }
+
+#label {
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+
+}
+
+#label #lstcheckbox {
+
+cursor: pointer;
+
+}
+
+#label #innerlabel{
+
+background-color: blueviolet;
+border: 40px;
+border-radius: 5px;
+padding: 4px;
+cursor: pointer;
+margin: 10px;
+
+}
+
+.lst .icon{
+
+margin: 10px;
+display: flex;
+align-items: flex-end;
+flex-direction: column;
+font-size: 160%;
+cursor: pointer;
+
+}
+
+.lst .icon:hover{
+
+    transform: scale(1.1);
+    font-size: 160%;
+    cursor: pointer;
+    
+}
+
+#add p {
+
+cursor: pointer;
+
+}
+
+#add {
+
+    cursor: pointer;
+    flex-direction: row;
+}
+
+#delete {
+
+    cursor: pointer;
+
+}
+
