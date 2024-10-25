@@ -37,7 +37,7 @@ body{
     }
 
 
-.sidebar.close .line_name,.usr{
+.sidebar.close .line_name,.sidebar.close .usr{
         opacity: 0;
         }
 
@@ -67,9 +67,7 @@ position: relative;
 }
 
 .sidebar .sideTop img{
-    width: 40px;
-   
-
+    width: 50px;
 }
 
 .sidebar header .tog{
@@ -146,8 +144,12 @@ transition: 0.2s;
     outline: none;
     border: none;
     color: white;
- 
     border-radius: 15px;
+}
+
+.sidebar .searchBox input::placeholder {
+    color: rgb(1, 1, 1);
+    opacity: 0.7; 
 }
 
 .sidebar .menu-bar{
@@ -173,7 +175,7 @@ transition: 0.2s;
     left: 290px;
     transition: 0.2s ;
 }
-.sidebar.close ~ .Today,.sidebar.close ~ .quartersOfUrgency{
+.sidebar.close ~ .Today,.sidebar.close ~.quartersOfUrgency{
     left: 88px;
     width: calc(100%-88px);
 }

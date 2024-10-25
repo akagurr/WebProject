@@ -1,0 +1,85 @@
+body {
+    background-image: url(dark-background-abstract-background-network-3d-background-3840x2160-8324.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: sans-serif;
+    direction: rtl; /* هذا يجعل الاتجاه من اليمين إلى اليسار */
+    text-align: right; /* هذا يجعل النصوص تبدأ من اليمين */
+  }
+  
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Box {
+    border: solid thin rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    color: white;
+    margin: 250px;
+    padding: 30px;
+    width: 400px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    text-align: center;
+  }
+  
+  .InsideBox {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .InsideBox input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 70%;
+  }
+  
+  .usrBox, .pasBox, .Reg input {
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 2px solid #ccc;
+    margin: 30px;
+  }
+  
+  .InsideBox input:hover, .InsideBox input:focus {
+    transform: scale(1.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .usrBox:hover, .usrBox:focus, .pasBox:hover, .pasBox:focus {
+    transform: scale(1.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .InsideBox button:hover {
+    border: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+  .InsideBox a {
+    color: #efefef;
+    text-decoration: none;
+  }
+  
+  .InsideBox a:hover {
+    text-decoration: underline;
+  }
+  
+  #register, #log {
+    border: thin solid transparent;
+    background: #fff;
+    color: #000;
+    font-weight: 600;
+    padding: 12px 20px;
+    width: 70%;
+  }
