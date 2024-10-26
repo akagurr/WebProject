@@ -74,107 +74,99 @@
                 
                 <div class="page_cont">
                     <div class="sechead">
-                        <h2>Importent</h2>
-                        <input type="button" name="delete" id="delete" value="Delete Selected">
+                        <h2>Important</h2>
+                        <input type="button" name="delete" id="delete" value="Delete Selected" onclick="deleteSelectedTasks()">
                     </div>
-                <div class="lst">
-                    
-                    <p>study</p>
-
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                </div>
-                <div class="lst">
-                    <p>study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                </div>
-                <div class="lst">
-                    <p>study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                </div >
-
-                <div class="lst" id = "add">
-                    <p>Add tasks</p>
-                    <div>
-                    <i class='bx bx-plus icon'></i>
-                    </div>
-                </div>
-                
-                
-                </div>
-                <div class="page_cont">
-                    <div class="sechead">
-                        <h2>not Important</h2>
-                    </div>
-                <div class="lst">
-                    <p>study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                </div>
-                <div class="lst">
-                    <p>study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                </div>
-                <div class="lst">
-                    <p>study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                    
-                </div>
-
-                    <div class="lst" id = "add">
-                    <p>Add tasks</p>
-                    <div>
-                    <i class='bx bx-plus icon'></i>
-                    </div>
+        
+                    <% todotasks.forEach(task => { %>
+                        <% if (task.urgency) { %>
+                            <div class="lst">
+                                <p><%= task.taskTitle %></p>
+                                <div id="label">
+                                    <p id="innerlabel">Urgent</p>
+                                    <input type="button" name="edit" id="lstcheckbox" value="edit">
+                                </div>
+                            </div>
+                        <% } %>
+                    <% }) %>
+        
+                    <div class="lst" id="add">
+                        <p>Add tasks</p>
+                        <div>
+                            <i class='bx bx-plus icon'></i>
+                        </div>
                     </div>
                 </div>
         
+                <div class="page_cont">
+                    <div class="sechead">
+                        <h2>Not Important</h2>
+                    </div>
+        
+                    <% todotasks.forEach(task => { %>
+                        <% if (!task.urgency) { %>
+                            <div class="lst">
+                                <p><%= task.taskTitle %></p>
+                                <div id="label">
+                                    <p id="innerlabel">Not Urgent</p>
+                                    <input type="button" name="edit" id="lstcheckbox" value="edit">
+                                </div>
+                            </div>
+                        <% } %>
+                    <% }) %>
+        
+                    <div class="lst" id="add">
+                        <p>Add tasks</p>
+                        <div>
+                            <i class='bx bx-plus icon'></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-            
-
         </section>
+        
+        
 
         <section class="quartersOfUrgency" id="urgencySection" style="display: none;">
-            <div id="centerh1">
-                <div class="main">
-                    <h1>Quarters of Urgency</h1>
-                </div>
-            
-                <div class="template">
-                    <div class="Quarters">
-                        <h2>Urgent | Important</h2>
-                    </div>
-                    <div class="Quarters">
-                        <h2>Not Urgent | Important</h2>
-                    </div>
-                    <div class="Quarters">
-                        <h2>Urgent | Not Important</h2>
-                    </div>
-                    <div class="Quarters">
-                        <h2>Not Urgent | Not Important</h2>
-                    </div>
-                </div>
-                </div>
-              
+           
+    <div id = "centerh1">
+        <h1>Quarters of Urgency</h1>
+        </div>
+    
+    <div class = "template">
+    
+        
+    
+        <div class = "Quarters">
+        
+        
+        <h2>Urgent | Important</h2>
+    
+        </div>
+       
+        <div class = "Quarters">
+    
+        <h2>Not Urgent | Important</h2>
+    
+        </div>
+    
+        <div class = "Quarters">
+    
+        <h2>Urgent | Not Importent</h2>
+    
+        </div>
+    
+    
+        <div class = "Quarters">
+    
+        <h2>Not Urgent | Not Importent</h2>
+    
+        </div>
+    
+    
+    </div>
         </section>
 
-    <script src="sidebar.js"></script>
   </body>
+  <script src="/sidebar.js"></script>
 </html>
