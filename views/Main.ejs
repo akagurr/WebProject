@@ -1,183 +1,196 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="style.css" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <meta charset="utf-8" />
-    <title>Login</title>
-  </head>
+<head>
+  <!-- Load the main stylesheet and Boxicons library for UI styling and icons -->
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta charset="utf-8" />
+  <title>Todo</title>
+</head>
 
-  <body>
-        <nav class="sidebar close">
-            <header>
-                <div class="sideTop">
-                    <span class="image">
-                        <img src="qw.png" alt="">
-                    </span>
-
-                    <div class="usr">
-                        <span class="name">User</span>
-                    </div>
-                   
-                 </div>  
-               
-                 <i class='bx bxs-chevron-right tog' id="toggleIcon"></i>
-                
-            </header>
-
-            <div class="menu-bar">
-                <div class="menu">
-                    <li class="searchBox">
-                        <i class='bx bx-search-alt icon' ></i>
-                        <input type="search" placeholder="Search...">
-                      </li>
-                    <ul class="menu-link">
-                        <li class="nav-link">
-                          <a href="#">
-                            <i class='bx bx-plus icon'></i>
-                            <span class="line_name">Add task</span>
-                          </a>
-                        </li>
-                        <li class="nav-link" id="todayT">
-                            <a href="#">
-                                <i class='bx bx-calendar-check icon' ></i>
-                              <span class="line_name">Today Tasks</span>
-                            </a>
-                          </li>
-                          <li class="nav-link" id="urgen">
-                            <a href="#">
-                              <i class='bx bxs-time icon'></i>
-                              <span class="line_name">Quarter of urgency </span>
-                            </a>
-                          </li>
-                          
-                    </ul>
-                </div>
-                <div class="bottom"><li class="nav-link">
-                    <a href="#">
-                        <i class='bx bxs-door-open icon' ></i>
-                      <span class="line_name">Logout</span>
-                    </a>
-                  </li></div>
-            </div>
-        </nav>
-           
-                </div>
-            </div>
-
-        </nav>
-
-
-        <section class="Today" id="todaySection">
-            <div class="main">
-                <h1>Today</h1>
-                
-                <div class="page_cont">
-                    <div class="sechead">
-                        <h2>Important</h2>
-                
-                    </div>
-        
-                    <% todotasks.forEach(task => { %>
-                        <% if (task.urgency) { %>
-                            <div class="lst" id="task-<%= task._id %>">
-                                <p onclick="toggleTaskBody('<%= task._id %>')"><%= task.taskTitle %></p>
-                                <div id="task-body-<%= task._id %>" class="task-body" style="display: none;">
-                                    <p><%= task.body %></p>
-                                </div>
-                                <div id="label">
-                                    <p id="innerlabel"><%= task.urgency ? "Urgent" : "Not Urgent" %></p>
-                                    <input type="button" name="edit" id="lstcheckbox" value="edit">
-                                    <input type="button" name="delete" id="delete" value="delete" onclick="deleteTask('<%= task._id %>')">
-                                </div>
-                            </div>
-                            
-                        <% } %>
-                    <% }) %>
-        
-                    <div class="lst" id="add">
-                        <p>Add tasks</p>
-                        <div>
-                            <i class='bx bx-plus icon'></i>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="page_cont">
-                    <div class="sechead">
-                        <h2>Not Important</h2>
-                    </div>
-        
-                    <% todotasks.forEach(task => { %>
-                        <% if (!task.urgency) { %>
-                            <div class="lst" id="task-<%= task._id %>">
-                                <p onclick="toggleTaskBody('<%= task._id %>')"><%= task.taskTitle %></p>
-                                <div id="task-body-<%= task._id %>" class="task-body" style="display: none;">
-                                    <p><%= task.body %></p>
-                                </div>
-                                <div id="label">
-                                    <p id="innerlabel"><%= task.urgency ? "Urgent" : "Not Urgent" %></p>
-                                    <input type="button" name="edit" id="lstcheckbox" value="edit">
-                                    <input type="button" name="delete" id="delete" value="delete" onclick="deleteTask('<%= task._id %>')">
-                                </div>
-                            </div>
-                            
-                        <% } %>
-                    <% }) %>
-        
-                    <div class="lst" id="add">
-                        <p>Add tasks</p>
-                        <div>
-                            <i class='bx bx-plus icon'></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        
-
-        <section class="quartersOfUrgency" id="urgencySection" style="display: none;">
-           
-    <div id = "centerh1">
-        <h1>Quarters of Urgency</h1>
+<body>
+  <!-- Sidebar navigation for accessing main sections -->
+  <nav class="sidebar close">
+    <header>
+      <div class="sideTop">
+        <!-- User profile picture and name display -->
+        <span class="image">
+          <img src="qw.png" alt="User Profile Picture">
+        </span>
+        <div class="usr">
+          <span class="name"><%= userName %></span> <!-- Display the logged-in user's name -->
         </div>
-    
-    <div class = "template">
-    
-        
-    
-        <div class = "Quarters">
-        
-        
-        <h2>Urgent | Important</h2>
-    
-        </div>
-       
-        <div class = "Quarters">
-    
-        <h2>Not Urgent | Important</h2>
-    
-        </div>
-    
-        <div class = "Quarters">
-    
-        <h2>Urgent | Not Importent</h2>
-    
-        </div>
-    
-    
-        <div class = "Quarters">
-    
-        <h2>Not Urgent | Not Importent</h2>
-    
-        </div>
-    
-    
+      </div>
+      <!-- Toggle button for collapsing/expanding the sidebar -->
+      <i class='bx bxs-chevron-right tog' id="toggleIcon"></i>
+    </header>
+
+    <div class="menu-bar">
+      <!-- Sidebar search box for filtering tasks -->
+      <div class="menu">
+        <li class="searchBox">
+          <i class='bx bx-search-alt icon'></i>
+          <input type="search" id="taskSearch" placeholder="Search tasks...">
+        </li>
+        <!-- Sidebar navigation links for different sections -->
+        <ul class="menu-link">
+          <li class="nav-link" id="todayT">
+            <a href="#">
+              <i class='bx bx-calendar-check icon'></i>
+              <span class="line_name">Todo Tasks</span>
+            </a>
+          </li>
+          <li class="nav-link" id="userInfoLink">
+            <a href="#">
+              <i class='bx bx-user icon'></i>
+              <span class="line_name">User Info</span>
+            </a>
+          </li>
+          <li class="nav-link" id="urgen">
+            <a href="#">
+              <i class='bx bx-info-circle icon'></i>
+              <span class="line_name">About</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Logout button redirects user to the login page -->
+      <div class="bottom">
+        <li class="nav-link">
+          <a href="/login">
+            <i class='bx bxs-door-open icon'></i>
+            <span class="line_name">Logout</span>
+          </a>
+        </li>
+      </div>
     </div>
-        </section>
+  </nav>
 
-  </body>
-  <script src="/toggleTask.js"></script>
-  <script src="/sidebar.js"></script>
+  <!-- Main section displaying Todo tasks by priority -->
+  <section class="Today" id="todaySection">
+    <div class="main">
+      <h1>Todo</h1>
+
+      <!-- High Priority Tasks Section -->
+      <div class="page_cont">
+        <div class="sechead">
+          <h2>High Priority Tasks</h2>
+        </div>
+
+        <!-- Loop through tasks and display high-priority (urgent) tasks -->
+        <% todotasks.forEach(task => { %>
+          <% if (task.urgency) { %>
+            <div class="lst" id="task-<%= task._id %>">
+              <p onclick="toggleTaskBody('<%= task._id %>')"><%= task.taskTitle %></p>
+              <br />
+              <div id="task-body-<%= task._id %>" class="task-body" style="display: none;">
+                <p><%= task.body %></p>
+              </div>
+              <div id="label">
+                <p id="innerlabel"><%= task.urgency ? "Urgent" : "Not Urgent" %></p>
+                <!-- Delete button for removing the task -->
+                <input type="button" name="delete" id="delete" value="delete" onclick="deleteTask('<%= task._id %>')">
+              </div>
+            </div>
+          <% } %>
+        <% }) %>
+
+        <!-- Form to add high-priority tasks -->
+        <div class="lst" id="add-important" onclick="toggleAddTaskForm('addTaskFormImportant')">
+          <p>Add tasks</p>
+          <div>
+            <i class='bx bx-plus icon'></i>
+          </div>
+        </div>
+
+        <form id="addTaskFormImportant" action="/add-tasks" method="POST" style="display: none; margin-top: 10px;">
+          <input type="text" name="taskTitle" placeholder="Task Title" required>
+          <textarea name="body" placeholder="Task Details"></textarea>
+          <label>
+            Urgency:
+            <select name="urgency">
+              <option value="true">Urgent</option>
+              <option value="false">Not Urgent</option>
+            </select>
+          </label>
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
+
+      <!-- Low Priority Tasks Section -->
+      <div class="page_cont">
+        <div class="sechead">
+          <h2>Low Priority Tasks</h2>
+        </div>
+
+        <!-- Loop through tasks and display low-priority (not urgent) tasks -->
+        <% todotasks.forEach(task => { %>
+          <% if (!task.urgency) { %>
+            <div class="lst" id="task-<%= task._id %>">
+              <p onclick="toggleTaskBody('<%= task._id %>')"><%= task.taskTitle %></p>
+              <br />
+              <div id="task-body-<%= task._id %>" class="task-body" style="display: none;">
+                <p><%= task.body %></p>
+              </div>
+              <div id="label">
+                <p id="innerlabel"><%= task.urgency ? "Urgent" : "Not Urgent" %></p>
+                <!-- Delete button for removing the task -->
+                <input type="button" name="delete" id="delete" value="delete" onclick="deleteTask('<%= task._id %>')">
+              </div>
+            </div>
+          <% } %>
+        <% }) %>
+
+        <!-- Form to add low-priority tasks -->
+        <div class="lst" id="add-not-important" onclick="toggleAddTaskForm('addTaskFormNotImportant')">
+          <p>Add tasks</p>
+          <div>
+            <i class='bx bx-plus icon'></i>
+          </div>
+        </div>
+
+        <form id="addTaskFormNotImportant" action="/add-tasks" method="POST" style="display: none; margin-top: 10px;">
+          <input type="text" name="taskTitle" placeholder="Task Title" required>
+          <textarea name="body" placeholder="Task Details"></textarea>
+          <label>
+            Urgency:
+            <select name="urgency">
+              <option value="true">Urgent</option>
+              <option value="false">Not Urgent</option>
+            </select>
+          </label>
+          <button type="submit">Add Task</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Info Section displaying user's account details -->
+  <section class="UserInfo" id="userInfoSection" style="display: none;">
+    <div id="centerh1">
+      <h1>User Information</h1>
+      <p><strong>Username:</strong> <%= userName %></p>
+      <p><strong>Email:</strong> <%= userEmail %></p>
+      <p><strong>First Name:</strong> <%= firstName %></p>
+      <p><strong>Last Name:</strong> <%= lastName %></p>
+      <a href="/MainPage?userName=<%= userName %>">Back to Main</a>
+    </div>
+  </section>
+
+  <!-- About Section providing application details -->
+  <section class="quartersOfUrgency" id="urgencySection" style="display: none;">
+    <div id="centerh1">
+      <h1>About This Application</h1>
+      <p>This application helps you manage your tasks effectively.</p>
+      <p>Created by: Turki Albusairi, Sultan Ben Kanaan, Thamer Ben Heidan</p>
+      <p>Version: 1.0.0</p>
+      <p>Feel free to reach out for feedback or suggestions! Support@gmail.com</p>
+      <a href="/MainPage?userName=<%= userName %>">Back to Main</a>
+    </div>
+  </section>
+
+</body>
+<!-- JavaScript for toggling tasks and sidebar functionality -->
+<script src="/toggleTask.js"></script>
+<script src="/sidebar.js"></script>
 </html>

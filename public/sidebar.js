@@ -4,41 +4,59 @@ const sidebar = body.querySelector('.sidebar');
 const tog = body.querySelector('.tog');
 const toggleIcon = document.getElementById('toggleIcon');
 
-// Today Tasks elements
+// Section Elements
 const todaySection = document.getElementById('todaySection');
 const todayTaskLink = document.getElementById('todayT');
-
-// Quarter of Urgency elements
 const urgencyLink = document.getElementById('urgen');
 const urgencySection = document.getElementById('urgencySection');
+const userInfoSection = document.getElementById('userInfoSection');
+const userInfoLink = document.getElementById('userInfoLink');
 
-// Function to handle the sidebar toggle
+// Toggle Sidebar
 tog.addEventListener("click", () => {
     sidebar.classList.toggle("close");
-    
-    if (sidebar.classList.contains("close")) {
-        toggleIcon.classList.replace('bxs-chevron-left', 'bxs-chevron-right');
-    } else {
-        toggleIcon.classList.replace('bxs-chevron-right', 'bxs-chevron-left');
-    }
+    toggleIcon.classList.toggle('bxs-chevron-right', sidebar.classList.contains("close"));
+    toggleIcon.classList.toggle('bxs-chevron-left', !sidebar.classList.contains("close"));
 });
 
-// Function to scroll to Today Tasks and show the section
-todayTaskLink.addEventListener("click", (event) => {
-    todaySection.style.display = "block"; // Show the Today section
-    urgencySection.style.display = "none"; // Hide the Urgency section
-    todaySection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to Today section
+// Task Search
+document.getElementById('taskSearch').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const tasks = document.querySelectorAll('.lst');
+
+    tasks.forEach(task => {
+        const taskText = task.querySelector('p').innerText.toLowerCase();
+        task.style.display = taskText.includes(searchTerm) ? '' : 'none';
+    });
 });
 
-// Function to show Quarter of Urgency and hide the Today section
-urgencyLink.addEventListener("click", (event) => {
-    todaySection.style.display = "none"; // Hide the Today section
-    urgencySection.style.display = "block"; // Show the Urgency section
-    urgencySection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the Urgency section
+// Show Today Tasks Section
+todayTaskLink.addEventListener("click", () => {
+    showSection(todaySection);
 });
 
-// Redirect to login page on logout button click
+// Show Urgency Section
+urgencyLink.addEventListener("click", () => {
+    showSection(urgencySection);
+});
+
+// Show User Info Section
+userInfoLink.addEventListener("click", () => {
+    showSection(userInfoSection);
+});
+
+// Function to Hide All Sections and Show Selected One
+function showSection(sectionToShow) {
+    todaySection.style.display = 'none';
+    urgencySection.style.display = 'none';
+    userInfoSection.style.display = 'none';
+    sectionToShow.style.display = 'block';
+    sectionToShow.scrollIntoView({ behavior: "smooth" });
+    sidebar.classList.add("close");
+    toggleIcon.classList.replace('bxs-chevron-left', 'bxs-chevron-right');
+}
+
+// Redirect to Login
 document.querySelector('.bottom').addEventListener('click', () => {
-    window.location.href = 'login.html';
+    window.location.href = '/Login';
 });
-

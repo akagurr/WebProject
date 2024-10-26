@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
+<head>
+    <link rel="stylesheet" href="/stylereg.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta charset="utf-8" />
     <title>Login</title>
-  </head>
+</head>
 
-  <body>
-    <div class="main">
+<body>
+  <div class="main">
       <div class="Box">
-        <div class="InsideBox">
-          <h1>Login</h1> 
-          <div class="usrBox">
-            <input type="text" id="usr" name="usr" placeholder="Username" required />
-            <i class='bx bxs-user'></i>
+          <div class="InsideBox">
+              <h1>Login</h1>
+              <form id="loginForm" method="POST">
+                  <div class="usrBox">
+                      <input type="text" id="usr" name="usr" placeholder="Username" required />
+                      <i class='bx bxs-user'></i>
+                  </div>
+                  <div class="pasBox">
+                      <input type="password" id="pass" name="password" placeholder="Password" required />
+                      <i class='bx bxs-lock-alt'></i>
+                  </div>
+                  <input type="submit" id="login" value="Login"/>
+
+                  <% if (typeof alertMessage !== 'undefined') { %>
+                    <script>
+                        window.onload = function() {
+                            alert("<%= alertMessage %>");
+                        }
+                    </script>
+                <% } %>
+  
+              </form>
+
+              <p></p>
+              <a href="/register">Don't have an account? Click here to register.</a>
           </div>
-          <div class="pasBox">
-            <input type="password" id="pass" name="password" placeholder="Password" required />
-            <i class='bx bxs-lock-alt'></i>
-          </div>
-          <button id="log">Login</button>
-          <p></p>
-          <a href="register.html">Don't have an account?</a>
-        </div>
       </div>
-    </div>
-  </body>
+  </div>
+</body>
 </html>
