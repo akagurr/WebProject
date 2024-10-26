@@ -328,7 +328,9 @@ cursor: pointer;
     cursor: pointer;
     
 }
-
+lst_cont{
+    display: hide;
+}
 #add p {
 
 cursor: pointer;

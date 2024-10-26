@@ -74,7 +74,7 @@
                 
                 <div class="page_cont">
                     <div class="sechead">
-                        <h2>Importent</h2>
+                        <h2>Important</h2>
                         <input type="button" name="delete" id="delete" value="Delete Selected">
                     </div>
                 <div class="lst">
@@ -87,10 +87,13 @@
                     </div>
                 </div>
                 <div class="lst">
-                    <p>study</p>
+                    <p onclick="showbody()">study</p>
                     <div id = "label">
                         <p id = innerlabel>Urgent</p>
                         <input type="button" name="done" id="lstcheckbox" value="edit">
+                        <div class="lst_cont">
+                            <p>body of lst</p>
+                        </div>
                     </div>
                 </div>
                 <div class="lst">
@@ -192,4 +195,17 @@
 
     <script src="sidebar.js"></script>
   </body>
+  <script>
+    function showbody() {
+        
+        const lstCont = document.querySelector(".lst_cont");
+        
+        
+        if (lstCont.style.display === "none" || lstCont.style.display === "") {
+            lstCont.style.display = "block";
+        } else {
+            lstCont.style.display = "none";
+        }
+    }
+</script>
 </html>
