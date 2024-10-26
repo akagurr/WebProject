@@ -53,10 +53,17 @@ Usage:
 File Structure:
 
 /models            # Contains Mongoose schemas
+
 /node_modules      # Dependencies
+
 /public            # Static assets (CSS, JavaScript)
+
 /views             # EJS templates for rendering pages
+
 package.json       # Project metadata and dependencies
+
 package-lock.json  # Dependency versions for consistent installs
+
 server.js          # Main server file
+
 README.md          # Project documentation
