@@ -239,7 +239,7 @@ text-align: left;
 }
 .lst{
     display: flex;
-    justify-content:space-between;
+    flex-direction: column;
     margin-top: 20px;
     margin-left: 70px;
     width: 100%;
@@ -254,7 +254,10 @@ text-align: left;
     padding-top: 20px;
     transition: transform 1s ease;
 }
-
+ .lst_main {
+    display: flex;
+    justify-content: space-evenly;
+}
 .lst:hover{
     background-color: rgba(0, 0, 0, 0.5);
     border: 0.5 solid thin ;
@@ -284,27 +287,29 @@ text-align: left;
 }
 
 #label {
-
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 
-
 }
+
 
 #label #lstcheckbox {
 
 cursor: pointer;
 
 }
-
+.lst_actions{
+    display: flex;
+    flex-direction: row;
+}
 #label #innerlabel{
 
 background-color: rgb(32, 32, 32);
 border: 40px;
 border-radius: 5px;
 padding: 4px;
-cursor: pointer;
+cursor: default;
 margin: 10px;
 color: crimson ;
 
@@ -328,9 +333,10 @@ cursor: pointer;
     cursor: pointer;
     
 }
-lst_cont{
-    display: hide;
+.lst_cont{
+    display: none;
 }
+
 #add p {
 
 cursor: pointer;

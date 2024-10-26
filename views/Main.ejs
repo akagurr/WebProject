@@ -79,30 +79,37 @@
                     </div>
                 <div class="lst">
                     
-                    <p>study</p>
-
                     <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                </div>
-                <div class="lst">
-                    <p onclick="showbody()">study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                        <div class="lst_cont">
-                            <p>body of lst</p>
+                        <p onclick="showbody()" id="task_name">study</p>
+                            <div class="lst_actions">
+                                <p id = innerlabel>Urgent</p>
+                                <input type="button" name="done" id="lstcheckbox" value="edit">
+                                <input type="button" name="delete" id="delete" value="delete">
+                            </div>
                         </div>
+
+                    <div class="lst_cont">
+                        <p>ssss</p>
                     </div>
+                    
                 </div>
+                
                 <div class="lst">
-                    <p>study</p>
+                    
                     <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
+                        <p onclick="showbody()" id="task_name">study</p>
+                            <div class="lst_actions">
+                                <p id = innerlabel>Urgent</p>
+                                <input type="button" name="done" id="lstcheckbox" value="edit">
+                                <input type="button" name="delete" id="delete" value="delete">
+                            </div>
+                        </div>
+
+                    <div class="lst_cont">
+                        <p>ssss</p>
                     </div>
-                </div >
+                    
+                </div>
 
                 <div class="lst" id = "add">
                     <p>Add tasks</p>
@@ -117,28 +124,24 @@
                     <div class="sechead">
                         <h2>not Important</h2>
                     </div>
-                <div class="lst">
-                    <p>study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                </div>
-                <div class="lst">
-                    <p>study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
-                </div>
-                <div class="lst">
-                    <p>study</p>
-                    <div id = "label">
-                        <p id = innerlabel>Urgent</p>
-                        <input type="button" name="done" id="lstcheckbox" value="edit">
-                    </div>
+                    <div class="lst">
                     
-                </div>
+                        <div id = "label">
+                            <p onclick="showbody()" id="task_name">study</p>
+                                <div class="lst_actions">
+                                    <p id = innerlabel>Not urgent</p>
+                                    <input type="button" name="done" id="lstcheckbox" value="edit">
+                                    <input type="button" name="delete" id="delete" value="delete">
+                                </div>
+                            </div>
+    
+                        <div class="lst_cont">
+                            <p>ssss</p>
+                        </div>
+                        
+                    </div>
+
+                    
 
                     <div class="lst" id = "add">
                     <p>Add tasks</p>
@@ -155,57 +158,29 @@
         </section>
 
         <section class="quartersOfUrgency" id="urgencySection" style="display: none;">
-            <div id = "centerh1">
-                <h1>Quarters of Urgency</h1>
+            <div id="centerh1">
+                <div class="main">
+                    <h1>Quarters of Urgency</h1>
                 </div>
             
-            <div class = "template">
-
-                <div class = "Quarters">
-                
-                
-                <h2>Urgent | Important</h2>
-            
+                <div class="template">
+                    <div class="Quarters">
+                        <h2>Urgent | Important</h2>
+                    </div>
+                    <div class="Quarters">
+                        <h2>Not Urgent | Important</h2>
+                    </div>
+                    <div class="Quarters">
+                        <h2>Urgent | Not Important</h2>
+                    </div>
+                    <div class="Quarters">
+                        <h2>Not Urgent | Not Important</h2>
+                    </div>
                 </div>
-               
-                <div class = "Quarters">
-            
-                <h2>Not Urgent | Important</h2>
-            
                 </div>
-            
-                <div class = "Quarters">
-            
-                <h2>Urgent | Not Importent</h2>
-            
-                </div>
-            
-            
-                <div class = "Quarters">
-            
-                <h2>Not Urgent | Not Importent</h2>
-            
-                </div>
-            
-            
-            </div>
-            
               
         </section>
 
-    <script src="sidebar.js"></script>
   </body>
-  <script>
-    function showbody() {
-        
-        const lstCont = document.querySelector(".lst_cont");
-        
-        
-        if (lstCont.style.display === "none" || lstCont.style.display === "") {
-            lstCont.style.display = "block";
-        } else {
-            lstCont.style.display = "none";
-        }
-    }
-</script>
+  <script src="/sidebar.js"></script>
 </html>
