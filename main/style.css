@@ -8,7 +8,7 @@ color: white;
 
 body{
 
-    background: rgb(16, 16, 16);
+    background-image: url(dark-background-abstract-background-network-3d-background-3840x2160-8324.png);
         width: 100%;
         font-family: sans-serif;   
 }
@@ -185,24 +185,33 @@ transition: 0.2s;
 
 /*Section class=home*/
 
+.main {
 
+align-items: flex-start;
+text-align: left;
+
+}
 .lst input{
     align-items: right;
 }
 .main h1{
     margin: 30px;
     margin-left: 180px;
+    text-shadow: 2px 2px black;
+    color: #ccc;
 }
 
 .main h2{
     margin-top: 40px;
+    text-shadow: 3px 3px black;
+    color: #ccc;
     
 }
 .page_cont{
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin: auto;
+    width: 70%;
+    margin-left: 5%;
     
 }
 
@@ -222,14 +231,14 @@ transition: 0.2s;
     text-decoration: underline;
 }
 .sechead input:hover{
-    scale: 1.1;
+    scale: 1.05;
     color:rgb(214, 55, 16) ;
     text-decoration: none;
 }
 .lst{
     display: flex;
     justify-content:space-between;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 70px;
     width: 100%;
     border-top:0px;
@@ -245,16 +254,17 @@ transition: 0.2s;
 }
 
 .lst:hover{
-    background-color: #1d1c1c;
+    background-color: rgba(0, 0, 0, 0.5);
     border: 0.5 solid thin ;
     border-radius: 5px;
-    border-bottom-color: #1d1c1c;
+    border-bottom-color: #1d1c1c ;
     
 }
 .lst p:hover{
     
     color: rgb(214, 55, 16);
-    transform: scale(1.1);
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .lst input{
@@ -271,227 +281,70 @@ transition: 0.2s;
     text-decoration: none;
 }
 
+#label {
+
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+
+}
+
+#label #lstcheckbox {
+
+cursor: pointer;
+
+}
+
+#label #innerlabel{
+
+background-color: blueviolet;
+border: 40px;
+border-radius: 5px;
+padding: 4px;
+cursor: pointer;
+margin: 10px;
+
+}
+
+.lst .icon{
+
+margin: 10px;
+display: flex;
+align-items: flex-end;
+flex-direction: column;
+font-size: 160%;
+cursor: pointer;
+
+}
+
+.lst .icon:hover{
+
+    transform: scale(1.1);
+    font-size: 160%;
+    cursor: pointer;
+    
+}
+
+#add p {
+
+cursor: pointer;
+
+}
+
+#add {
+
+    cursor: pointer;
+    flex-direction: row;
+}
+
+#delete {
+
+    cursor: pointer;
+
+}
+
 
 #urgencySection {
     display: none; /* Initially hide the section */
 }
-
-.main {
-
-    align-items: flex-start;
-    text-align: left;
-    
-    }
-    .lst input{
-        align-items: right;
-    }
-    .main h1{
-        margin: 30px;
-        margin-left: 180px;
-        text-shadow: 2px 2px black;
-        color: #ccc;
-    }
-    
-    .main h2{
-        margin-top: 40px;
-        text-shadow: 3px 3px black;
-        color: #ccc;
-        
-    }
-    .page_cont{
-        display: flex;
-        flex-direction: column;
-        width: 70%;
-        margin-left: 5%;
-        
-    }
-    
-    .sechead{
-        margin-top: 15px;
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-    }
-    .sechead input{
-        margin-top: 10px;
-        border-style: none;
-        padding: 3px;
-        background: none;
-        color: #ccc;
-        border-radius: 5px;
-        text-decoration: underline;
-    }
-    .sechead input:hover{
-        scale: 1.05;
-        color:rgb(214, 55, 16) ;
-        text-decoration: none;
-    }
-    .lst{
-        display: flex;
-        justify-content:space-between;
-        margin-top: 20px;
-        margin-left: 70px;
-        width: 100%;
-        border-top:0px;
-        border-top-style: thin;
-        border-bottom: 0.5px;
-        border-color: #ccc;
-        border-style: solid;
-        border-left-style: none;
-        border-right-style: none;
-        padding: 10px;
-        padding-top: 20px;
-        transition: transform 1s ease;
-    }
-    
-    .lst:hover{
-        background-color: rgba(0, 0, 0, 0.5);
-        border: 0.5 solid thin ;
-        border-radius: 5px;
-        border-bottom-color: #1d1c1c ;
-        
-    }
-    .lst p:hover{
-        
-        color: rgb(214, 55, 16);
-        transform: scale(1.05);
-        opacity: 0.9;
-    }
-    
-    .lst input{
-        border-style: none;
-        padding: 3px;
-        background: none;
-        color: #ccc;
-        border-radius: 5px;
-        text-decoration: underline;
-    }
-    .lst input:hover{
-        scale: 1.1;
-        color:rgb(214, 55, 16) ;
-        text-decoration: none;
-    }
-    
-    #label {
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-    
-    }
-    
-    #label #lstcheckbox {
-    
-    cursor: pointer;
-    
-    }
-    
-    #label #innerlabel{
-    
-    background-color: blueviolet;
-    border: 40px;
-    border-radius: 5px;
-    padding: 4px;
-    cursor: pointer;
-    margin: 10px;
-    
-    }
-    
-    .lst .icon{
-    
-    margin: 10px;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    font-size: 160%;
-    cursor: pointer;
-    
-    }
-    
-    .lst .icon:hover{
-    
-        transform: scale(1.1);
-        font-size: 160%;
-        cursor: pointer;
-        
-    }
-    
-    #add p {
-    
-    cursor: pointer;
-    
-    }
-    
-    #add {
-    
-        cursor: pointer;
-        flex-direction: row;
-    }
-    
-    #delete {
-    
-        cursor: pointer;
-    
-    }
-    
-    
-    #urgencySection {
-        display: none; /* Initially hide the section */
-    }
-    
-    
-    
-    .quartersOfUrgency #urgencySection .Quarters {
-    
-    background-color: dimgray;
-    opacity: 0.8;
-    width: 35%;
-    height: 50%;
-    margin: 30px auto;
-    border-radius: 30px 10px 30px 10px;
-    box-shadow: 5px 10px 20px #000;
-    transition: transform 0.4s ease;
-    }
-    
-    .quartersOfUrgency .Quarters:hover {
-    
-      background-color: rgb(68, 68, 68);
-      opacity: 0.95;
-      transform: scale(1.03);
-      width: 35%;
-      height: 50%;
-      margin: 30px auto;
-    
-      }
-    
-      .quartersOfUrgency .Quarters h2{
-    
-    text-align: center;
-    font-family: 'Roboto';
-    text-shadow: 1px 3px 3px #000000;
-    color: #ccc;
-    
-    }
-    
-    .quartersOfUrgency #centerh1{
-    box-shadow: 5px 10px 20px #000;
-    margin: 10px auto;
-    text-align: center;
-    color: #ccc;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-    width: fit-content;
-    text-shadow: 2px 2px #000000;
-    }.template {
-
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: 80vh;
-        width: 80%;
-        margin: auto;
-      
-      }
