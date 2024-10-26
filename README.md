@@ -1,60 +1,40 @@
 # WebProject
 
-Features:
+WebProject
+Overview
+A simple and effective task management application that helps users categorize, search, and manage tasks based on priority.
+
+Features
 Task Addition: Easily add new tasks with a title, description, and urgency level.
-Task Categorization: Tasks are automatically sorted into 2 categories:
-Task Search: search tasks by their titles
-high-priority
-low-priority
-Delete Tasks: Remove tasks individually or in bulk.
-Real-time Display: Automatically displays tasks in their respective categories on the main dashboard.
-Responsive Design: Ensures compatibility across multiple devices and screen sizes.
-
-Technologies Used:
-Node.js: Backend runtime environment
-MongoDB: Database for storing and managing tasks
-EJS: Templating engine for rendering dynamic HTML pages
-CSS & JavaScript: For the front-end design and interactive elements
-
-Prerequisites:
+Task Categorization: Automatically sorts tasks into high-priority and low-priority categories.
+Task Search: Allows searching for tasks by title.
+Delete Tasks: Offers the option to delete tasks individually or in bulk.
+Real-time Display: Instantly displays tasks in relevant categories on the main dashboard.
+Responsive Design: Optimized for compatibility across devices and screen sizes.
+Technologies Used
+Node.js: Backend runtime environment.
+MongoDB: Database for task storage and management.
+EJS: Templating engine for rendering dynamic HTML pages.
+CSS & JavaScript: Used for front-end styling and interactivity.
+Prerequisites
 Node.js
 MongoDB
-npm (comes with Node.js)
-
+npm
 Installation
-Clone the repository:
-
-git clone https://github.com/akagurr/WebProject.git
-
-Install dependencies:
-npm install express
-npm install ejs
-nppm install nodemon
-npm install mongoose
-npm install express-session
-npm install bcryptjs
-
-Set up MongoDB connection:
-Create a MongoDB Atlas account or run MongoDB locally.
-Update the mongoose.connect URL in server.js with your database connection string.
-
-Run the application:
-npm start
-
-Access the application:
-Open your browser and go to http://localhost:8000/
-
-Usage:
-Adding Tasks: Fill in the task title, description, and urgency level.
-Deleting Tasks: Use the "Delete" button to remove a specific task or delete multiple tasks.
-View Task Categories: Navigate between different categories based on urgency and importance.
-
-File Structure:
-/models             # Contains Mongoose schemas
-/node_modules       # Dependencies
-/public             # Static assets (CSS, JavaScript)
-/views              # EJS templates for rendering pages
-package.json        # Project metadata and dependencies
-package-lock.json   # Detailed dependency tree and versions for consistent installs
-serverme.js         # Main server file
-README.md           # Project documentation
+Clone the repository
+Install dependencies for express, ejs, mongoose, express-session, bcryptjs, and nodemon.
+Set up MongoDB connection using MongoDB Atlas or a local MongoDB instance. Update the connection URL in the main server file.
+Run the application to start the server.
+Access the application in your browser.
+Usage
+Adding Tasks: Use the input fields to add a task title, description, and urgency.
+Deleting Tasks: Click "Delete" to remove individual tasks or multiple tasks.
+View Task Categories: Easily navigate between different categories based on urgency.
+File Structure
+/models - Contains Mongoose schemas.
+/node_modules - Dependencies.
+/public - Static assets (CSS, JavaScript).
+/views - EJS templates for rendering pages.
+package.json - Lists project metadata and dependencies.
+server.js - Main server file.
+README.md - Project documentation.
