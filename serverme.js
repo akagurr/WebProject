@@ -51,22 +51,22 @@ app.post("/add-tasks", async (req, res) => {
     
 });
 
-app.delete("/delete/:id", async(req,res) => {
-    
+app.delete("/delete/:id", async (req, res) => {
     try {
-const id = req.params.id;
-const tasks = await mainschema.findByIdAndDelete(id);
+        const { id } = req.params;
+        const task = await mainschema.findByIdAndDelete(id); // Replace `mainschema` with your Mongoose model if named differently
 
-if (!tasks) {
-    return res.status(404).json({ message: "Article not found" });
+        if (!task) {
+            return res.status(404).json({ message: "Task not found" });
+        }
+
+        res.json({ message: "Task deleted successfully", task });
+    } catch (error) {
+        console.error("Error deleting task:", error);
+        res.status(500).json({ message: "Failed to delete task" });
     }
-    res.json({ message: "Article deleted successfully", tasks });
-}catch (error) {
-    console.error("Error deleting article:", error);
-    res.status(500).json({ message: "Failed to delete article" });
-}
-
 });
+
 
 
 app.listen(8000, function(){

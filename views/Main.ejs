@@ -75,18 +75,23 @@
                 <div class="page_cont">
                     <div class="sechead">
                         <h2>Important</h2>
-                        <input type="button" name="delete" id="delete" value="Delete Selected" onclick="deleteSelectedTasks()">
+                
                     </div>
         
                     <% todotasks.forEach(task => { %>
                         <% if (task.urgency) { %>
-                            <div class="lst">
-                                <p><%= task.taskTitle %></p>
+                            <div class="lst" id="task-<%= task._id %>">
+                                <p onclick="toggleTaskBody('<%= task._id %>')"><%= task.taskTitle %></p>
+                                <div id="task-body-<%= task._id %>" class="task-body" style="display: none;">
+                                    <p><%= task.body %></p>
+                                </div>
                                 <div id="label">
-                                    <p id="innerlabel">Urgent</p>
+                                    <p id="innerlabel"><%= task.urgency ? "Urgent" : "Not Urgent" %></p>
                                     <input type="button" name="edit" id="lstcheckbox" value="edit">
+                                    <input type="button" name="delete" id="delete" value="delete" onclick="deleteTask('<%= task._id %>')">
                                 </div>
                             </div>
+                            
                         <% } %>
                     <% }) %>
         
@@ -105,13 +110,18 @@
         
                     <% todotasks.forEach(task => { %>
                         <% if (!task.urgency) { %>
-                            <div class="lst">
-                                <p><%= task.taskTitle %></p>
+                            <div class="lst" id="task-<%= task._id %>">
+                                <p onclick="toggleTaskBody('<%= task._id %>')"><%= task.taskTitle %></p>
+                                <div id="task-body-<%= task._id %>" class="task-body" style="display: none;">
+                                    <p><%= task.body %></p>
+                                </div>
                                 <div id="label">
-                                    <p id="innerlabel">Not Urgent</p>
+                                    <p id="innerlabel"><%= task.urgency ? "Urgent" : "Not Urgent" %></p>
                                     <input type="button" name="edit" id="lstcheckbox" value="edit">
+                                    <input type="button" name="delete" id="delete" value="delete" onclick="deleteTask('<%= task._id %>')">
                                 </div>
                             </div>
+                            
                         <% } %>
                     <% }) %>
         
@@ -168,5 +178,6 @@
         </section>
 
   </body>
+  <script src="/toggleTask.js"></script>
   <script src="/sidebar.js"></script>
 </html>

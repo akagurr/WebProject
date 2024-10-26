@@ -41,3 +41,4 @@ urgencyLink.addEventListener("click", (event) => {
 document.querySelector('.bottom').addEventListener('click', () => {
     window.location.href = 'login.html';
 });
+
