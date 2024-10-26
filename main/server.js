@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require("mongoose")
 const app = express();
 app.use(express.json());
-const allTasks = require("./models/tasksSchema")
+const allInfo= require("./models/information.js")
 
 
-mongoose.connect("mongodb+srv://akashesue:hRCPwpOmaILd8vj2@taskscluster.igxl1.mongodb.net/?retryWrites=true&w=majority&appName=tasksCluster")
+mongoose.connect("mongodb+srv://akashesue:hRCPwpOmaILd8vj2@todolistdb.rvfeg.mongodb.net/?retryWrites=true&w=majority&appName=TodoListdb")
 
 .then (() => {
 
@@ -16,3 +16,12 @@ mongoose.connect("mongodb+srv://akashesue:hRCPwpOmaILd8vj2@taskscluster.igxl1.mo
 console.log("error with connectiing with the DB", error)
 
 });
+
+
+app.get("/Main",(res,req)=>{
+    res.render("/Main.ejs")
+})
+
+app.listen(8000,()=>{
+    console.log("listening")
+ });
